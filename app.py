@@ -38,6 +38,7 @@ def login():
         conn = sqlite3.connect('database.db')
         cur = conn.cursor()
         cur.execute('SELECT * FROM users WHERE username = ?', (username,))
+        # user example (1,alice,fhakeljedn2445fdad5) , user[2] == hash password
         user = cur.fetchone()
         conn.close()
 
@@ -68,12 +69,6 @@ def register():
             return 'Username already exists!'
     
     return render_template('register.html')
-
-
-
-
-
-   
 
 
 if __name__ == '__main__':
