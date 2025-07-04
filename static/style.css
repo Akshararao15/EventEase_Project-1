@@ -1,14 +1,103 @@
+/* Universal font and background */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    text-align: center;
-    margin-top: 100px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #ffe4e1, #ffffff, #ffe4e1);
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
 }
 
-form {
-    background: white;
-    padding: 20px;
-    display: inline-block;
+/* Optional pastel override */
+.bg-custom {
+    background: linear-gradient(to bottom, #ffeef5, #ffffff, #ffeef5);
+}
+
+/* Background logo as watermark */
+body.bg-custom::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    background: url('/static/eventease_logo.png') no-repeat center center;
+    background-size: contain;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Shared form styling */
+.login-form,
+.register-form {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    text-align: center;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 80%; /* Shifted right */
+    transform: translate(-40%, -50%);
+}
+
+/* Input boxes */
+.login-form .form-control,
+.register-form .form-control {
+    padding: 12px;
+    margin-bottom: 16px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: border 0.3s;
+}
+
+.login-form .form-control:focus,
+.register-form .form-control:focus {
+    border-color: #ffb6c1;
+    outline: none;
+    background-color: #fff0f5;
+}
+
+/* Pink button */
+.btn-pink {
+    background-color: #ff8fa3;
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-pink:hover {
+    background-color: #ff6e8e;
+}
+
+/* Link styling */
+.text-pink {
+    color: #e75480;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.text-pink:hover {
+    text-decoration: underline;
+}
+
+/* Footer note text */
+.login-form p,
+.register-form p {
+    margin-top: 1rem;
+    font-size: 14px;
+    color: #555;
 }
