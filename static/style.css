@@ -28,6 +28,8 @@ body.bg-custom::before {
     opacity: 0.17;
     z-index: 0;
     pointer-events: none;
+
+    
 }
 
 /* Shared form styling */
