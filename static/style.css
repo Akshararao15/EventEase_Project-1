@@ -25,7 +25,7 @@ body.bg-custom::before {
     transform: translate(-50%, -50%);
     background: url('/static/eventease_logo.png') no-repeat center center;
     background-size: contain;
-    opacity: 0.15;
+    opacity: 0.17;
     z-index: 0;
     pointer-events: none;
 }
@@ -89,6 +89,8 @@ body.bg-custom::before {
     text-decoration: none;
     font-weight: 500;
 }
+
+
 
 .text-pink:hover {
     text-decoration: underline;
